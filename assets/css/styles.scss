@@ -1,0 +1,124 @@
+$color1: #f0f5f9;
+$color2: #c9d6df;
+$color3: #52616b;
+$color4: #1e2022;
+//navbar
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.topnav {
+	z-index: 5;
+	overflow: hidden;
+	background-color: $color1;
+	a {
+		float: left;
+		display: block;
+		color: $color4;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+	}
+	.right {
+		float: right;
+	}
+	a:hover {
+		background-color: $color2;
+		color: $color4;
+	}
+	a.active {
+		background-color: $color3;
+		color: $color1;
+	}
+	.search-container {
+		float: left;
+		button {
+			float: right;
+			padding: 6px 10px;
+			margin-top: 8px;
+			margin-right: 16px;
+			background: $color2;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+		}
+		button:hover {
+			background: $color2;
+		}
+	}
+	input[type=text] {
+		padding: 6px;
+		margin-top: 8px;
+		font-size: 17px;
+		border: none;
+	}
+}
+
+//sidebar
+
+.sidebar {
+	float: left;
+	width: 15rem;
+	position: sticky;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	padding-top: 50px;
+	height: 100vh;
+	background: $color1;
+	overflow-x: hidden;
+	padding: 8px 0;
+	text-align: right;
+	p {
+		padding: 6px 8px 6px 16px;
+		text-decoration: none;
+		font-size: 25px;
+		color: $color3;
+		display: block;
+	}
+	p:hover {
+		color: $color4;
+	}
+}
+
+.sidebar .sidebar .main {
+	margin-left: 140px; /* Same width as the sidebar + left position in px */
+	font-size: 28px; /* Increased text to enable scrolling */
+	padding: 0px 10px;
+}
+
+@media screen and (max-height: 600px) {
+	.topnav {
+		.search-container {
+			float: none;
+		}
+		a,
+		input[type=text],
+		.search-container button {
+			float: none;
+			display: block;
+			text-align: left;
+			width: 100%;
+			margin: 0;
+			padding: 14px;
+		}
+		input[type=text] {
+			border: 1px solid $color2;
+		}
+	}
+	.sidebar {
+		position: relative;
+		padding-top: 15px;
+		a {
+			font-size: 18px;
+		}
+	}
+}
+//content
+.page {
+	display: inline-block;
+}
