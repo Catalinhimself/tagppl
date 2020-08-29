@@ -16,7 +16,5 @@
     "url": "https://github.com/Catalinhimself/tagppl/issues"
   },
   "homepage": "https://github.com/Catalinhimself/tagppl#readme",
-  "dependencies": {
-    "bulma": "^0.9.0"
-  }
+  "dependencies": {}
 }

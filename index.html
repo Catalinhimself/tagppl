@@ -1,70 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TagPpl</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <title>tagppl</title>
-</head>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script defer src="./assets/js/index.js"></script>
+  </head>
+  <body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          TagPpl
+        </a>
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
 
-<body>
-    <header>
-        <nav>
-            <div class="topnav">
-                <a class="active" href="#home">TagPpl</a>
-               
-                <div class="search-container">
-                  <form action="">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                  </form>
-                </div> <a class="right active" href="#">User</a>
-                <a class="right" href="#">Chats</a>
-               
-              </div>
-        </nav>
-        <hr>
-    </header>
-    <section>
-        <div class="sidebar">
-            <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            <p class="swithch">you / they</p>
-            <p class="tag">friends</p>
-            <p class="tag">acquaintance</p>
-            <p class="tag">enemy</p>
-            <p>posts</p>
-            <p>Chats</p>
+    
+        <div class="navbar-end">
+          <form class="navbar-item" action="">
+         
+              <input class="input" type="text" placeholder="Search">
+      
+           </form>
+          <div class="navbar-item">
+            
+           
+              <div class="buttons">
+                <a class="button is-info">
+                  <strong>Messages</strong>
+                </a>
+              <a class="button is-info">
+                <strong>Sign up</strong>
+              </a>
+              <a class="button is-info">
+              <strong>Log in</strong>
+              </a>
+            
+          </div>
         </div>
-        <div class="page">
-            <p class="show">
-                <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            </p>
-            <p class="show">
-                <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            </p>
-            <p class="show">
-                <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            </p>
-            <p class="show">
-                <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            </p>
-            <p class="show">
-                <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            </p>
-            <p class="show">
-                <img src="./assets/img/avatar.png" alt="avatar" width="200px">
-            <p>user</p>
-            </p>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="hero-body">
+            <div class="container has-text-centered">
+            <h1 class="title"> The app to tag people</h1>
+            <h2 class="subtitle">Catalin Plesu | August 29, 2020</h2>
+      </div>
+    </div>
+      <div class="columns">
+        <div class="column">
+          <div class="menu sticky">				
+              <img src="./assets/img/avatar.png" alt="">
+            
+            <p  class="menu-label"><b>Username</b></p>
+      
+              <nav class="panel">
+                <p class="panel-tabs">
+                  <a class="is-active">You</a>
+                  <a>Them</a>
+                </p>
+                <a class="panel-block is-active">
+                  <span class="panel-icon">
+                    <i class="fas fa-user-friends" aria-hidden="true"></i>
+                  </span>
+                  Friends
+                </a>
+                <a class="panel-block">
+                  <span class="panel-icon">
+                    <i class="fas fa-user-check" aria-hidden="true"></i>
+                  </span>
+                  Aquaintence
+                </a>
+                <a class="panel-block">
+                  <span class="panel-icon">
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                  </span>
+                  Enemies
+                </a>
+                <a class="panel-block">
+                  <span class="panel-icon">
+                    <i class="fas fa-plus" aria-hidden="true"></i>
+                  </span>
+                  more
+                </a>
+              </nav>
+            </ul>
+          </div>
         </div>
-    </section>
+        <div class="column is-four-fifths content">
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+           
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+         
+          <div class="columns">
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+            <div class="column">
+                <img src="./assets/img/avatar.png" alt="">
+              <a herf="#">Username</a>
+            </div>
+          </div>
+  
+  
+  
+        </div>
 
-</body>
-
+      </div>
+    </div> <!-- end container -->
+      <script src="js/main.js"></script>
+  
+  </body>
 </html>
