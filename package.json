@@ -16,5 +16,10 @@
     "url": "https://github.com/Catalinhimself/tagppl/issues"
   },
   "homepage": "https://github.com/Catalinhimself/tagppl#readme",
-  "dependencies": {}
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.2"
+  }
 }
