@@ -3,7 +3,7 @@
         <div class="column">
           <div class="menu sticky">				
          <div class="box">              
-        <img src="/img/avatar.png" alt="">        
+        <img src="<%= !userz?"/img/avatar.png":userz.avatar %>" alt="">        
         <p  class="menu-label"><b><%= !userz?"guest":userz.username %> </b></p>
         </div>
       
@@ -45,8 +45,8 @@
 
           <% users.forEach((user)=>{ %>
             <div class="column">
-              <div class="box">  <img src="/img/avatar.png" alt="">
-                <a herf="#"><%= user.username %> </a></div>
+              <div class="box">  <img src="<%= !user.avatar?"/img/avatar.png":user.avatar %>" alt="">
+                <a herf="/<%=user._id%>"><%= user.username %> </a></div>
             </div>
           <% }) %> 
     </div> 

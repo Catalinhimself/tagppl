@@ -61,7 +61,8 @@ app.post("/signup", (req, res) => {
 			} else {
 				let newuser = {
 					username : req.body.username,
-					password : req.body.password
+					password : req.body.password,
+					avatar   : req.body.avatar
 				};
 
 				user.create(newuser, (err, obj) => {
