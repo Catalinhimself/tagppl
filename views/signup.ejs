@@ -1,39 +1,15 @@
 <%- include ("partials/header") %> 
 
-<div class="box">
+
   <form action="/signup" method="post">
-  <div class="field">
-      <p class="control has-icons-left has-icons-right">
-        <input class="input" type="text" name="username" placeholder="username">
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-    
-      </p>
-    </div>
-    <div class="field">
-      <p class="control has-icons-left">
-        <input class="input" type="password" name="password" placeholder="Password">
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </p>
-    </div>
-    <div class="field">
-      <p class="control has-icons-left">
-        <input class="input" type="text" name="avatar" placeholder="avatar url">
-        <span class="icon is-small is-left">
-          <i class="fas fa-lock"></i>
-        </span>
-      </p>
-    </div>
-    <div class="field">
-      <p class="control">
-        <button class="button is-success">
+ 
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="avatar" placeholder="avatar url">
+        <button">
           Sign up
         </button>
-      </p>
-    </div>
+
   </form>
-</div>
+
   <%- include ("partials/footer") %> 

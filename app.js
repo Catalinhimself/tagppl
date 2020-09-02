@@ -78,6 +78,15 @@ app.post("/signup", (req, res) => {
 		}
 	);
 });
+app.get("/profiles/:id", (req, res) => {
+	user.find({ _id: req.params.id }, (err, obj) => {
+		if (err) throw err;
+		res.render("profile", {
+			userz    : userz,
+			viewuser : obj[0]
+		});
+	});
+});
 //port
 app.listen(3000, () => {
 	console.log("server runs");

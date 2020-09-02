@@ -1,0 +1,12 @@
+<%- include ("partials/header") %>  
+        <hr>            
+          <% users.forEach((user)=>{ %>
+              <div>
+                <img src="<%= !user.avatar?"/img/avatar.png":user.avatar %>" alt="">
+                <a href="/profiles/<%= user._id %>"><%= user.username %></a>
+            </div>
+            <hr>
+          <% }) %> 
+  
+
+        <%- include ("partials/footer") %> 

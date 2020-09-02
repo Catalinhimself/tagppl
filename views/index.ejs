@@ -1,55 +1,28 @@
 <%- include ("partials/header") %>  
-      <div class="columns">
-        <div class="column">
-          <div class="menu sticky">				
-         <div class="box">              
+        <hr>            
         <img src="<%= !userz?"/img/avatar.png":userz.avatar %>" alt="">        
-        <p  class="menu-label"><b><%= !userz?"guest":userz.username %> </b></p>
-        </div>
+        <p><b><%= !userz?"guest":userz.username %> </b></p>
+       <hr>
       
-              <nav class="panel">
-                <p class="panel-tabs">
-                  <a class="is-active">All</a>
-                  <a>You</a>
-                  <a>Them</a>
-                </p>
-                <a class="panel-block is-active">
-                  <span class="panel-icon">
-                    <i class="fas fa-user-friends" aria-hidden="true"></i>
-                  </span>
-                  Friends
-                </a>
-                <a class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-user-check" aria-hidden="true"></i>
-                  </span>
-                  Aquaintence
-                </a>
-                <a class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                  </span>
-                  Enemies
-                </a>
-                <a class="panel-block">
-                  <span class="panel-icon">
-                    <i class="fas fa-plus" aria-hidden="true"></i>
-                  </span>
-                  more
-                </a>
+              <nav>
+                  <a href="#">All</a>
+                  <a href="#">You</a>
+                  <a href="#">Them</a>
+                  <hr>
+                  <a href="#">Friends</a>
+                  <a href="#">Aquaintence</a>
+                  <a href="#">Enemies</a>
+                  <a href="#">more</a>
               </nav>
-            </ul>
-          </div>
-        </div>
-        <div class="column is-four-fifths content">
+        <hr>
 
           <% users.forEach((user)=>{ %>
-            <div class="column">
-              <div class="box">  <img src="<%= !user.avatar?"/img/avatar.png":user.avatar %>" alt="">
-                <a herf="/<%=user._id%>"><%= user.username %> </a></div>
+              <div>
+                <img src="<%= !user.avatar?"/img/avatar.png":user.avatar %>" alt="">
+                <a href="/profiles/<%= user._id %>"><%= user.username %></a>
             </div>
+            <hr>
           <% }) %> 
-    </div> 
   
 
         <%- include ("partials/footer") %> 
