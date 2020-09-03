@@ -6,11 +6,17 @@ const mongoose = require("mongoose"),
 	methodoverride = require("method-override");
 const user = require("./models/user");
 var userz;
+
 //setings
 
 app.set("view engine", "ejs");
 app.use(bodyparser.urlencoded({ extended: true }));
-mongoose.connect("mongodb://localhost:27017/tagppl", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/tagppl", {
+	useNewUrlParser    : true,
+	useFindAndModify   : false,
+	useCreateIndex     : true,
+	useUnifiedTopology : true
+});
 app.use(express.static(__dirname + "/public"));
 app.use(methodoverride("_method"));
 
@@ -18,10 +24,17 @@ app.use(methodoverride("_method"));
 app.get("/", (req, res) => {
 	user.find({}, (err, users) => {
 		if (err) throw err;
-		res.render("index", {
-			users : users,
-			userz : userz
-		});
+		if (userz) {
+			res.render("index", {
+				users : users,
+				userz : userz
+			});
+		} else {
+			res.render("homepage", {
+				users : users,
+				userz : userz
+			});
+		}
 	});
 });
 app.get("/login", (req, res) => {
@@ -42,11 +55,9 @@ app.post("/login", (req, res) => {
 		},
 		(err, currentuser) => {
 			if (err) throw err;
-			console.log(currentuser);
 			userz = currentuser[0];
 		}
 	);
-
 	res.redirect("/");
 });
 app.post("/signup", (req, res) => {
@@ -70,7 +81,10 @@ app.post("/signup", (req, res) => {
 						console.log(err);
 						res.redirect("/");
 					} else {
-						console.log(obj);
+						user.find(newuser, (err, currentuser) => {
+							if (err) throw err;
+							userz = currentuser[0];
+						});
 						res.redirect("/");
 					}
 				});
@@ -86,6 +100,9 @@ app.get("/profiles/:id", (req, res) => {
 			viewuser : obj[0]
 		});
 	});
+});
+app.get("/:filter", (req, res) => {
+	res.send('<a href="/">' + req.params.filter + " currently unavailable</a>");
 });
 //port
 app.listen(3000, () => {
