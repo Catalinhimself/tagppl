@@ -22,6 +22,7 @@ app.use(methodoverride("_method"));
 
 //routes
 app.get("/", (req, res) => {
+	console.log(userz);
 	user.find({}, (err, users) => {
 		if (err) throw err;
 		if (userz) {
@@ -92,6 +93,10 @@ app.post("/signup", (req, res) => {
 		}
 	);
 });
+app.delete("/logout", (req, res) => {
+	userz = null;
+	res.redirect("/");
+});
 app.get("/profiles/:id", (req, res) => {
 	user.find({ _id: req.params.id }, (err, obj) => {
 		if (err) throw err;
@@ -100,6 +105,21 @@ app.get("/profiles/:id", (req, res) => {
 			viewuser : obj[0]
 		});
 	});
+});
+app.post("/profiles/:id", (req, res) => {
+	/* 	user.update(
+		{ _id: userz._id },
+		{ $push: { tagged: [ { tag: req.body.tag, user: req.params.id } ] } },
+		(err, obj) => {
+			if (err) throw err;
+			console.log(obj);
+		}
+	);
+	user.update({ _id: req.params.id }, { $push: { taggedby: { tag: req.body.tag, user: userz._id } } }, (err, obj) => {
+		if (err) throw err;
+		console.log(obj);
+	}); */
+	res.redirect("/");
 });
 app.get("/:filter", (req, res) => {
 	res.send('<a href="/">' + req.params.filter + " currently unavailable</a>");

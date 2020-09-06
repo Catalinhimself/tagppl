@@ -3,4 +3,13 @@
 <img src="<%= !viewuser.avatar?"/img/avatar.png":viewuser.avatar %>" alt="">
 <p><%= viewuser.username %> </p>
 <hr>
+<form action="/profiles/<%= viewuser._id %>" method="POST">
+<input type="radio" name="tag" value="friend">
+<label for="">Friend</label>
+<input type="radio" name="tag" value="aquaintence">
+<label for="">Aquaintence</label>
+<input type="radio" name="tag" value="enemy">
+<label for="">Enemy</label>
+<button>Add</button>
+</form>
 <%- include ("partials/footer") %>  

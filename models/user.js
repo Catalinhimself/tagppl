@@ -6,8 +6,18 @@ const UserSchema = new mongoose.Schema({
 	password    : String,
 	avatar      : String,
 	membersince : { type: Date, default: Date.now },
-	tagged      : mongoose.Types.ObjectId,
-	taggedby    : mongoose.Types.ObjectId
+	tagged      : [
+		{
+			tag  : String,
+			user : String
+		}
+	],
+	taggedby    : [
+		{
+			tag  : String,
+			user : String
+		}
+	]
 });
 
 //UserSchema.plugin(passportLocalMongoose);

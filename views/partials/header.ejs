@@ -15,14 +15,15 @@
 
           <form action="">
          
-              <input class="input" type="text" placeholder="Search">
+              <input type="text" placeholder="Search">
       
            </form>
             
            
-                <a class="button is-info">
-                  <strong>Messages</strong>
-                </a>
+           <form action="">
+            <button>Messages</button>
+           </form>
+         
               <% if (!userz){ %> 
                 <a href="/signup"">
                   <strong>Sign up</strong>
@@ -31,7 +32,9 @@
                 <strong>Log in</strong>
                 </a>
               <% }else{ %> 
-                <p><%= userz.username %> </p>
+          <form action="/logout?_method=DELETE" method="POST">
+                <button><%= userz.username %> </button>
+          </form>
               <% } %> 
             
 
