@@ -106,27 +106,27 @@ app.get("/profiles/:id", (req, res) => {
 		});
 	});
 });
+//🅾 working on⏲
+//need to display all tags for a user
 app.post("/profiles/:id", (req, res) => {
 	//add the user as person who tagged in taggedby list
-	console.log(req.params.id, userz._id);
 	var additem = { tag: req.body.tag, _id: userz._id };
 	user.findOneAndUpdate({ _id: req.params.id }, { $push: { taggedby: additem } }, (err, obj) => {
 		(err) => console.log(err);
-		console.log(obj);
 	});
 	additem = { tag: req.body.tag, _id: req.params.id };
 	//add this profile by tag in taggedlist
-	user.findOneAndUpdate({ _id: userz._id }, { $push: { tagged: additem } }, (err, obj) => {
-		console.log(obj);
-	});
+	user.findOneAndUpdate({ _id: userz._id }, { $push: { tagged: additem } }, (err, obj) => {});
 	res.redirect("/");
 });
+
 app.get("/db", (req, res) => {
 	user.find({}, (err, obj) => {
 		(err) => console.log(err);
 		res.render("dbviewer", { users: obj });
 	});
 });
+
 app.get("/:filter", (req, res) => {
 	res.send('<a href="/">' + req.params.filter + " currently unavailable</a>");
 });
