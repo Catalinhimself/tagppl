@@ -3,7 +3,7 @@
 ## features
 - [x] userprofile
     - [x] signup login 
-        - [ ] select to view all people, people tagged by you and what are you to others
+        - [x] select to view all people, people tagged by you and what are you to others
             - [ ] respective tag filters
 - [x] profiles
     - [x] possibility to tag 
