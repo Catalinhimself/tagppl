@@ -22,7 +22,6 @@ app.use(methodoverride("_method"));
 
 //routes
 app.get("/", (req, res) => {
-	console.log(userz);
 	user.find({}, (err, users) => {
 		if (err) throw err;
 		if (userz) {
@@ -99,6 +98,7 @@ app.delete("/logout", (req, res) => {
 });
 app.get("/profiles/:id", (req, res) => {
 	user.find({ _id: req.params.id }, (err, obj) => {
+		console.log(user[0]);
 		if (err) throw err;
 		res.render("profile", {
 			userz    : userz,
@@ -107,19 +107,25 @@ app.get("/profiles/:id", (req, res) => {
 	});
 });
 app.post("/profiles/:id", (req, res) => {
-	/* 	user.update(
-		{ _id: userz._id },
-		{ $push: { tagged: [ { tag: req.body.tag, user: req.params.id } ] } },
-		(err, obj) => {
-			if (err) throw err;
-			console.log(obj);
-		}
-	);
-	user.update({ _id: req.params.id }, { $push: { taggedby: { tag: req.body.tag, user: userz._id } } }, (err, obj) => {
-		if (err) throw err;
+	//add the user as person who tagged in taggedby list
+	console.log(req.params.id, userz._id);
+	var additem = { tag: req.body.tag, _id: userz._id };
+	user.findOneAndUpdate({ _id: req.params.id }, { $push: { taggedby: additem } }, (err, obj) => {
+		(err) => console.log(err);
 		console.log(obj);
-	}); */
+	});
+	additem = { tag: req.body.tag, _id: req.params.id };
+	//add this profile by tag in taggedlist
+	user.findOneAndUpdate({ _id: userz._id }, { $push: { tagged: additem } }, (err, obj) => {
+		console.log(obj);
+	});
 	res.redirect("/");
+});
+app.get("/db", (req, res) => {
+	user.find({}, (err, obj) => {
+		(err) => console.log(err);
+		res.render("dbviewer", { users: obj });
+	});
 });
 app.get("/:filter", (req, res) => {
 	res.send('<a href="/">' + req.params.filter + " currently unavailable</a>");

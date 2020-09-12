@@ -1,0 +1,29 @@
+    <table style="width:100%;border:1px solid black">
+        <tr style="border:1px solid black">
+            <th style="border:1px solid black">Username</th>
+            <th style="border:1px solid black">user ID</th>
+            <th style="border:1px solid black">Avatar</th>
+            <th style="border:1px solid black">member since</th>
+            <th style="border:1px solid black">tagged</th>
+            <th style="border:1px solid black">tagged by</th>
+        </tr>
+
+        <%users.forEach(user=>{%>
+         <tr>
+            <td style="border:1px solid black"><%= user.username %> </td>
+            <td style="border:1px solid black"><%= user._id %> </td>
+            <td style="border:1px solid black"><img src="<%= user.avatar %> " alt="" height="100px"></td>
+            <td style="border:1px solid black"><%= user.membersince.toDateString() %> </td>
+            <td style="border:1px solid black"><ul>
+               <% user.tagged.forEach(item=>{%>
+                    <li><%= item._id %> - <%= item.tag %></li>
+               <% });%>
+            </ul></td>
+            <td style="border:1px solid black"><ul>
+                <% user.taggedby.forEach(item=>{%>
+                     <li><%= item._id %> - <%= item.tag %></li>
+                <% });%>
+             </ul></td>
+        </tr>
+        <%});%>  
+      </table>

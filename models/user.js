@@ -8,14 +8,14 @@ const UserSchema = new mongoose.Schema({
 	membersince : { type: Date, default: Date.now },
 	tagged      : [
 		{
-			tag  : String,
-			user : String
+			tag : String,
+			_id : String
 		}
 	],
 	taggedby    : [
 		{
-			tag  : String,
-			user : String
+			tag : String,
+			_id : String
 		}
 	]
 });
