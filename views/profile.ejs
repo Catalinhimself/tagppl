@@ -13,30 +13,29 @@
 <button>Add</button>
 </form>
 <hr>
-<a href="/profiles/<%= viewuser._id %>">tagged</a>
-<a href="/profiles/<%= viewuser._id %>/taggedby">taggedby</a>
+<a href="/profiles/<%= viewuser._id %>/tagged/all">tagged</a>
+<a href="/profiles/<%= viewuser._id %>/taggedby/all">taggedby</a>
 <hr>
-<% tagged.forEach((user)=>{ %>
-    <div>
-      <img src="<%= !user.avatar?"/img/avatar.png":user.avatar %>" alt="">
-      <br>
-        <%  if(view){ %>
-            <% user.taggedby.forEach(element=>{%>
-                <% if(element._id == viewuser._id){ %>
-                       <h3><%= element.tag %> </h3>   
-                <% }; %> 
-            <%  }); %> 
-        <%  }else{ %>
-            
-            <% user.tagged.forEach(element=>{%>
-                <% if(element._id == viewuser._id){ %>
-                       <h3><%= element.tag %> </h3>   
-                <% }; %> 
-            <%  }); %> 
-            <% } %>
+<a href="/profiles/<%= viewuser._id %>/tagged/all">all</a>
+<a href="/profiles/<%= viewuser._id %>/tagged/friend">friend</a>
+<a href="/profiles/<%= viewuser._id %>/tagged/aquaintence">aquaintence</a>
+<a href="/profiles/<%= viewuser._id %>/tagged/enemy">enemy</a>
+<hr>
+<% linkslist.forEach((user)=>{ %>
 
-      <a href="/profiles/<%= user._id %>"><%= user.username %></a>
-  </div>
+                <div>
+                    <img src="<%= !user.avatar?"/img/avatar.png":user.avatar %>" alt="">
+                    <br>
+                      
+                          <% user[view].forEach(element=>{%>
+                              <% if(element._id == viewuser._id){ %>
+                                     <h3><%= element.tag %> </h3>   
+                              <% }; %> 
+                          <%  }); %> 
+                      
+                    <a href="/profiles/<%= user._id %>/tagged/all"><%= user.username %></a>
+                </div>
+
   <hr>
 <% }); %> 
 <%- include ("partials/footer") %>  

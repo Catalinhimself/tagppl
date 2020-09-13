@@ -70,41 +70,43 @@ var avatar = [
 	"data:image/jpeg;base64,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"
 ];
 tags = [ "friend", "aquaintence", "enemy" ];
-function seeddb(users_count = 2) {
-	user.deleteMany({}, (err) => {
-		if (err) throw err;
-	});
-	for (let i = 0; i < users_count; i++) {
-		user.create({
-			username : username[Math.floor(Math.random() * username.length)],
-			password : "password",
-			avatar   : avatar[Math.floor(Math.random() * avatar.length)]
-		});
-	}
-	setTimeout(() => {
-		user.find({}, (err, users) => {
+function seeddb(users_count = 2, active = true) {
+	if (active) {
+		user.deleteMany({}, (err) => {
 			if (err) throw err;
-			for (let i = 0; i < users_count; i++) {
-				//to add random person
-
-				let random;
-				let randomtag = tags[Math.floor(Math.random() * tags.length)];
-				do {
-					random = Math.floor(Math.random() * users_count);
-				} while (random === i);
-				random = { tag: randomtag, _id: users[random]._id };
-				tagger = { tag: randomtag, _id: users[i]._id };
-
-				//to add user tagged push
-				user.findOneAndUpdate({ _id: random._id }, { $push: { taggedby: tagger } }, (err, obj) => {
-					(err) => console.log(err);
-				});
-				user.findOneAndUpdate({ _id: tagger._id }, { $push: { tagged: random } }, (err, obj) => {
-					(err) => console.log(err);
-				});
-			}
 		});
-	}, 0);
+		for (let i = 0; i < users_count; i++) {
+			user.create({
+				username : username[Math.floor(Math.random() * username.length)],
+				password : "password",
+				avatar   : avatar[Math.floor(Math.random() * avatar.length)]
+			});
+		}
+		setTimeout(() => {
+			user.find({}, (err, users) => {
+				if (err) throw err;
+				for (let i = 0; i < users_count; i++) {
+					//to add random person
+
+					let random;
+					let randomtag = tags[Math.floor(Math.random() * tags.length)];
+					do {
+						random = Math.floor(Math.random() * users_count);
+					} while (random === i);
+					random = { tag: randomtag, _id: users[random]._id };
+					tagger = { tag: randomtag, _id: users[i]._id };
+
+					//to add user tagged push
+					user.findOneAndUpdate({ _id: random._id }, { $push: { taggedby: tagger } }, (err, obj) => {
+						(err) => console.log(err);
+					});
+					user.findOneAndUpdate({ _id: tagger._id }, { $push: { tagged: random } }, (err, obj) => {
+						(err) => console.log(err);
+					});
+				}
+			});
+		}, 0);
+	}
 }
 
 module.exports = seeddb;

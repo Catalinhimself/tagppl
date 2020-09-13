@@ -11,17 +11,17 @@
         <%users.forEach(user=>{%>
          <tr>
             <td style="border:1px solid black"><%= user.username %> </td>
-            <td style="border:1px solid black"><a href="/profiles/<%= user._id %>"><%= user._id %></a> </td>
+            <td style="border:1px solid black"><a href="/profiles/<%= user._id %>/tagged/all" target="_blank"><%= user._id %></a> </td>
             <td style="border:1px solid black"><img src="<%= user.avatar %> " alt="" height="100px"></td>
             <td style="border:1px solid black"><%= user.membersince.toDateString() %> </td>
             <td style="border:1px solid black"><ul>
                <% user.tagged.forEach(item=>{%>
-                    <a href="/profiles/<%= item._id %>"><li><%= item._id %> - <%= item.tag %></li></a>
+                    <a href="/profiles/<%= item._id %>/tagged/all" target="_blank"><li><%= item._id %> - <%= item.tag %></li></a>
                <% });%>
             </ul></td>
             <td style="border:1px solid black"><ul>
                 <% user.taggedby.forEach(item=>{%>
-                    <a href="/profiles/<%= item._id %>"><li><%= item._id %> - <%= item.tag %></li></a>
+                    <a href="/profiles/<%= item._id %>/tagged/all" target="_blank"><li><%= item._id %> - <%= item.tag %></li></a>
                 <% });%>
              </ul></td>
         </tr>

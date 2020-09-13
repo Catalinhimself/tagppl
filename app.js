@@ -6,9 +6,9 @@ const mongoose = require("mongoose"),
 	methodoverride = require("method-override");
 const user = require("./models/user");
 var userz;
-//remove everything
+//remove everything if second argument is unchanged
 const seeddb = require("./seeds");
-seeddb(8);
+seeddb(8, false);
 //setings
 
 app.set("view engine", "ejs");
@@ -100,36 +100,23 @@ app.delete("/logout", (req, res) => {
 });
 //🅾 working on⏲
 //need to display all tags for a user
-app.get("/profiles/:id", (req, res) => {
+app.get("/profiles/:id/:decide/:filter", (req, res) => {
 	user.find({ _id: req.params.id }, (err, obj) => {
 		if (err) throw err;
 		let usery = obj[0];
-		user.find({ _id: usery.tagged }, (err, obj) => {
+		user.find({ _id: usery[req.params.decide] }, (err, obj) => {
 			if (err) throw err;
 			res.render("profile", {
-				userz    : userz,
-				viewuser : usery,
-				tagged   : obj,
-				view     : 1
+				userz     : userz,
+				viewuser  : usery,
+				linkslist : obj,
+				view      : req.params.decide,
+				filter    : req.params.filter
 			});
 		});
 	});
 });
-app.get("/profiles/:id/taggedby", (req, res) => {
-	user.find({ _id: req.params.id }, (err, obj) => {
-		if (err) throw err;
-		let usery = obj[0];
-		user.find({ _id: usery.taggedby }, (err, obj) => {
-			if (err) throw err;
-			res.render("profile", {
-				userz    : userz,
-				viewuser : usery,
-				tagged   : obj,
-				view     : 0
-			});
-		});
-	});
-});
+
 app.post("/profiles/:id", (req, res) => {
 	//add the user as person who tagged in taggedby list
 	var additem = { tag: req.body.tag, _id: userz._id };
@@ -147,10 +134,6 @@ app.get("/db", (req, res) => {
 		(err) => console.log(err);
 		res.render("dbviewer", { users: obj });
 	});
-});
-
-app.get("/:filter", (req, res) => {
-	res.send('<a href="/">' + req.params.filter + " currently unavailable</a>");
 });
 //port
 app.listen(3000, () => {
