@@ -4,11 +4,19 @@
 <p><%= viewuser.username %> </p>
 <hr>
 <form action="/profiles/<%= viewuser._id %>" method="POST">
-<input type="radio" name="tag" value="friend">
+    <% let tag; linkslist.forEach((user)=>{ %>       
+                  <% user[view].forEach(element=>{%>
+                      <% if(element._id == viewuser._id){ %>
+                        <%tag = element.tag %>
+                      <% }; %> 
+                  <%  }); %>
+<hr>
+<% }); %> 
+<input type="radio" name="tag" value="friend" <%= tag="friend"?"checked":"" %> >
 <label for="">Friend</label>
-<input type="radio" name="tag" value="aquaintence">
+<input type="radio" name="tag" value="aquaintence" <%= tag="aquaintence"?"checked":"" %>>
 <label for="">Aquaintence</label>
-<input type="radio" name="tag" value="enemy">
+<input type="radio" name="tag" value="enemy" <%= tag="enemy"?"checked":"" %>>
 <label for="">Enemy</label>
 <button>Add</button>
 </form>
