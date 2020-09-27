@@ -8,7 +8,7 @@ const user = require("./models/user");
 var userz;
 //remove everything if second argument is unchanged
 const seeddb = require("./seeds");
-seeddb(8, false);
+seeddb(23, false);
 //setings
 
 app.set("view engine", "ejs");

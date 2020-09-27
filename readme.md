@@ -19,5 +19,5 @@
 - [ ] cant display users in a grid
 - [ ] some stuff wont work :rofl: :rofl: :rofl:
 - [x] cant add users in tagged and tagged by db section
-    - [ ] tagged users are stored in an array of objects but🍑 I cant figre out how to display them
-
+    - [x] tagged users are stored in an array of objects but🍑 I cant figre out how to display them
+        - [ ] this stuff is to nested

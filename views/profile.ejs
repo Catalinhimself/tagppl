@@ -36,12 +36,12 @@
                     <br>
                       
                           <% user[view].forEach(element=>{%>
-                              <% if(element._id == viewuser._id){ %>
+                              
                                      <h3><%= element.tag %> </h3>   
-                              <% }; %> 
+                             
                           <%  }); %> 
-                      
                     <a href="/profiles/<%= user._id %>/tagged/all"><%= user.username %></a>
+                    
                 </div>
 
   <hr>
